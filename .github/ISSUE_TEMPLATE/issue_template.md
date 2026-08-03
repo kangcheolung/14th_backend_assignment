@@ -1,6 +1,6 @@
 ---
-name: Custom issue template
-about: custom issue template
+name: 📝 이슈 템플릿
+about: 이슈 작업 시 사용하는 템플릿입니다
 title: ''
 labels: ''
 assignees: ''
@@ -15,5 +15,3 @@ assignees: ''
 - [x] 진행 완료
 
 ## 📒 기타
-
-
