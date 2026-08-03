@@ -1,3 +1,11 @@
+---
+name: Custom issue template
+about: custom issue template
+title: ''
+labels: ''
+assignees: ''
+---
+
 ## 📌 Description
 <!-- 이슈 관련 기능 설명 -->
 
@@ -7,3 +15,5 @@
 - [x] 진행 완료
 
 ## 📒 기타
+
+
