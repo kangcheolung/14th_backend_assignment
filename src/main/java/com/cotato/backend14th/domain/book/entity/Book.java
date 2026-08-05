@@ -1,5 +1,6 @@
-// Book.java — 실제 DB 테이블과 매핑되는 객체
 package com.cotato.backend14th.domain.book.entity;
+
+import com.cotato.backend14th.global.common.entity.BaseEntity; // 추가
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -8,12 +9,12 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Getter
-@NoArgsConstructor // JPA는 기본 생성자가 필수예요
+@NoArgsConstructor
 @AllArgsConstructor
-public class Book {
+public class Book extends BaseEntity { // extends BaseEntity 추가
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY) // DB가 자동으로 id를 증가시켜줘요
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	private String title;
