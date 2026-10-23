@@ -265,4 +265,4 @@ GET /api/study-posts/10/comments?page=0&size=20
 | 409 | `STUDY-003` | `STUDY_POST_CLOSED` | 모집이 마감된 글에는 댓글을 쓸 수 없어요. |
 | 500 | `COMMON-002` | `COMMON_INTERNAL_SERVER_ERROR` | 서버 내부 오류가 발생했습니다. |
 
-과제 명세 예시의 `code` 문자열(`STUDY_POST_NOT_FOUND` 등)은 이 프로젝트에서 응답 `code` 가 아니라 `ErrorCode` 상수 이름으로 쓴다.
+응답의 `code` 는 3주차 `ErrorCode` 규칙(`도메인-일련번호`)을 따르고, 위 표의 "상수" 열은 `ErrorCode` enum 의 상수 이름이다. (3주차의 `BOOK_NOT_FOUND` 가 `BOOK-001` 인 것과 같은 관계)

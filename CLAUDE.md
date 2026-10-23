@@ -42,7 +42,7 @@ frontend/                                # React + TypeScript + Vite + Tailwind 
 - 에러는 `Backend14thException(ErrorCode)` 을 던지고 `GlobalExceptionHandler` 가 `ErrorResponse` 로 바꾼다.
   - `@Valid` 검증 실패, 읽을 수 없는 요청 본문, 파라미터 타입 오류는 핸들러가 `400 INVALID_INPUT` 으로 바꾼다. 검증 실패는 첫 필드의 안내 문구를 `message` 로 내려준다.
   - 시큐리티 필터 단계의 인증 실패는 `AuthEntryPoint` 가 같은 `ErrorResponse` 형식(401)으로 내려준다.
-- 에러 코드는 `ErrorCode` enum 하나에 모은다. 응답의 `code` 는 `도메인-일련번호` (예: `STUDY-001`)이고, enum 상수 이름은 과제 명세 이름을 쓴다 (예: `STUDY_POST_NOT_FOUND`). 프론트와 E2E 는 `code` 문자열이 아니라 HTTP 상태와 `message` 를 기준으로 쓴다.
+- 에러 코드는 `ErrorCode` enum 하나에 모은다. 응답의 `code` 는 3주차 규칙대로 `도메인-일련번호` (예: `STUDY-001`)이고, enum 상수 이름은 과제 명세의 이름을 쓴다 (예: `STUDY_POST_NOT_FOUND`). 프론트와 E2E 는 `code` 문자열이 아니라 HTTP 상태와 `message` 를 기준으로 쓴다.
 - 인증은 JWT(`Authorization: Bearer`)다. 로그아웃은 토큰의 `jti` 를 `revoked_tokens` 에 저장해 무효 처리한다. `SecurityConfig` 의 공개 경로 외에는 로그인이 필요하고, 새 API 를 추가하면 이 경로 설정을 같이 확인한다. 작성자 본인 확인은 Service 에서 한다.
 - 공개 API 에 잘못된 토큰이 오면 익명으로 처리한다. 컨트롤러는 `@AuthenticationPrincipal Long userId` 로 회원 id 를 받고, 익명이면 `null` 이다.
 - 모집글과 댓글은 같은 `domain/studypost` 에 둔다. 다른 도메인의 Repository 를 직접 쓰지 않고 그 도메인의 Service(`UserService.getUser`)를 호출한다.
