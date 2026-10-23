@@ -1,6 +1,7 @@
 # CLAUDE.md — backend14th
 
 코테이토 14기 백엔드 과제 프로젝트. 일하는 방식과 컨벤션은 개인 하네스(`~/.claude/CLAUDE.md`, `~/.claude/rules/`, `~/.claude/skills/`)를 따르고, 이 파일에는 이 프로젝트만의 내용을 적는다.
+`backend/`(Spring Boot)와 `frontend/`(React)를 한 레포에서 관리하는 모노레포다. (이슈 #9)
 
 ## 프로젝트 개요
 - Spring Boot 3.5.16, Java 17, Gradle
@@ -11,18 +12,23 @@
 
 ## 구조
 ```
-src/main/java/com/cotato/backend14th/
-├── Backend14thApplication.java
-├── HelloController.java
-├── domain/
-│   └── book/{controller, dto, entity, repository}     # 아직 service 계층 없음
-└── global/
-    ├── common/entity/BaseEntity.java                  # createdAt, updatedAt
-    ├── common/response/{ApiResponse, ErrorResponse, ResponseUtils}
-    ├── config/{CorsConfig, SecurityConfig, SwaggerConfig}
-    └── exception/{Backend14thException, ErrorCode, GlobalExceptionHandler}
-src/main/resources/{application.yml, application-local.yml}
-src/test/java/…/Backend14thApplicationTests.java
+.claude/, CLAUDE.md, .github/            # 하네스와 이슈·PR 템플릿 (루트)
+backend/                                 # Spring Boot (Gradle)
+├── build.gradle, gradlew, .env.example
+└── src/main/java/com/cotato/backend14th/
+    ├── Backend14thApplication.java
+    ├── HelloController.java
+    ├── domain/
+    │   └── book/{controller, dto, entity, repository}     # 아직 service 계층 없음
+    └── global/
+        ├── common/entity/BaseEntity.java                  # createdAt, updatedAt
+        ├── common/response/{ApiResponse, ErrorResponse, ResponseUtils}
+        ├── config/{CorsConfig, SecurityConfig, SwaggerConfig}
+        └── exception/{Backend14thException, ErrorCode, GlobalExceptionHandler}
+    (resources: application.yml, application-local.yml / test: Backend14thApplicationTests.java)
+frontend/                                # React + TypeScript + Vite + Tailwind (개발 서버 3000번)
+├── package.json, vite.config.ts, .env.example
+└── src/
 ```
 
 ## 이 프로젝트의 약속
@@ -34,17 +40,24 @@ src/test/java/…/Backend14thApplicationTests.java
 - `CorsConfig` 는 `http://localhost:3000`, `http://localhost:8080` 만 허용한다.
 
 ## 환경 설정
-- `application.yml` 이 작업 폴더의 `.env` 를 읽는다. (`optional:file:.env[.properties]`) 필요한 변수: `DB_URL`, `DB_USERNAME`, `DB_PASSWORD`
+- `application.yml` 이 작업 폴더의 `.env` 를 읽는다. (`optional:file:.env[.properties]`) 서버를 `backend/` 에서 실행하므로 이 파일은 `backend/` 안에 둔다. 필요한 변수는 `backend/.env.example` 에 있다. (`DB_URL`, `DB_USERNAME`, `DB_PASSWORD`)
+- 프론트는 `frontend/` 의 환경 파일로 백엔드 주소(`VITE_API_URL`)를 받는다. 이름은 `frontend/.env.example` 에 있다.
 - 기본 프로파일은 `local` (`SPRING_PROFILES_ACTIVE` 로 바꾼다)
 - `.env` 는 Git 에 올리지 않고 읽거나 고치지 않는다. 값이 필요하면 사용자에게 묻는다.
 
 ## 주요 명령어
 ```bash
+# 백엔드 (backend/ 에서)
 ./gradlew build            # 빌드 + 테스트
 ./gradlew test             # 테스트
-./gradlew bootRun          # 실행 (MySQL 과 .env 필요)
+./gradlew bootRun          # 실행 (MySQL 과 backend/ 의 환경 파일 필요, 8080)
+
+# 프론트엔드 (frontend/ 에서)
+npm run dev                # 개발 서버 (3000, API 를 쓰려면 백엔드가 먼저 떠 있어야 함)
+npm run build              # 타입 검사 + 빌드
+npm run lint               # 린트
 ```
-Swagger UI: `/swagger-ui/index.html`
+Swagger UI: `http://localhost:8080/swagger-ui/index.html`
 
 ## 읽을 곳
 - 작업 규칙(브랜치·커밋·이슈·PR): `~/.claude/rules/git-conventions.md`, `pr-conventions.md`
