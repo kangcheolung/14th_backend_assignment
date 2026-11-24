@@ -271,3 +271,11 @@ npx playwright test
 ```
 
 Swagger UI: `http://localhost:8080/swagger-ui/index.html`
+
+---
+
+# 10. 과제 링크
+
+실제 파트원들이 과제를 진행한 레포는 아래와 같다.
+
+- [IT-Cotato/14th-Backend-Assignment](https://github.com/IT-Cotato/14th-Backend-Assignment)
