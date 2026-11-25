@@ -83,11 +83,11 @@ Git / GitHub
 
 | 주차 | 주제 | 역할 | 노션 |
 | --- | --- | --- | --- |
-| 1주차 | Git & GitHub | 버전 관리와 협업 도구 사용법 익히기 | [📂 1주차: Git & GitHub](https://app.notion.com/p/1-Git-GitHub-3a4e639500cc8068aeb9d947825fad19?source=copy_link) |
-| 2주차 | Swagger, `.env` 설정 | API 문서(Swagger)와 환경 변수 파일 설정 | [📂 2주차: Swagger, .env파일 설정](https://app.notion.com/p/2-Swagger-env-3aae639500cc80e0b9d7f9b0bb73851a?source=copy_link) |
-| 3주차 | 공통 응답, CORS, Security, BaseEntity | 성공·실패 응답 형식 통일, 에러 처리, CORS, Security 최소 설정, 생성·수정 시각 자동 관리 | [📂 3주차: 공통 응답, CORS, Security, BaseEntity 설정](https://app.notion.com/p/3-CORS-Security-BaseEntity-3b3e639500cc80cbaadbcf43cf3e76d4?source=copy_link) |
-| 4주차 | 하네스 엔지니어링 | `CLAUDE.md`, rules, skills, hooks로 AI 작업 환경 만들기 | [📂 4주차: 하네스 엔지니어링](https://app.notion.com/p/4-3f3e639500cc818caed7c12710a2503c?source=copy_link) |
-| 5,6주차 | 백엔드 + 프론트 개발 | 스터디 매칭 플랫폼 구현: API 13개, 화면 6개, 모노레포, JWT, ERD, E2E | [📂 5,6주차: 요구사항에 맞게 백엔드, 프론트 개발](https://app.notion.com/p/5-6-3f3e639500cc8128a05dddce177b4702?source=copy_link) |
+| 1주차 | Git & GitHub | 버전 관리와 협업 도구 사용법 익히기 | [📂 1주차: Git & GitHub](https://inexpensive-redcurrant-648.notion.site/1-Git-GitHub-423e639500cc8097a891cef6d6b70912?source=copy_link) |
+| 2주차 | Swagger, `.env` 설정 | API 문서(Swagger)와 환경 변수 파일 설정 | [📂 2주차: Swagger, .env파일 설정](https://inexpensive-redcurrant-648.notion.site/2-Swagger-env-4a9e639500cc821ebb9201e20a8a5ac7?source=copy_link) |
+| 3주차 | 공통 응답, CORS, Security, BaseEntity | 성공·실패 응답 형식 통일, 에러 처리, CORS, Security 최소 설정, 생성·수정 시각 자동 관리 | [📂 3주차: 공통 응답, CORS, Security, BaseEntity 설정](https://inexpensive-redcurrant-648.notion.site/3-CORS-Security-BaseEntity-fd7e639500cc8359b22681ec7ec5c24d?source=copy_link) |
+| 4주차 | 하네스 엔지니어링 | `CLAUDE.md`, rules, skills, hooks로 AI 작업 환경 만들기 | [📂 4주차: 하네스 엔지니어링](https://inexpensive-redcurrant-648.notion.site/4-104e639500cc839d98aa015a89917e4a?source=copy_link) |
+| 5,6주차 | 백엔드 + 프론트 개발 | 스터디 매칭 플랫폼 구현: API 13개, 화면 6개, 모노레포, JWT, ERD, E2E | [📂 5,6주차: 요구사항에 맞게 백엔드, 프론트 개발](https://inexpensive-redcurrant-648.notion.site/5-6-ca6e639500cc821081810186e929ad2c?source=copy_link) |
 
 ---
 
